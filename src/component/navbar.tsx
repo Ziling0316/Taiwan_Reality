@@ -31,7 +31,7 @@ const inter = Inter({ subsets: ["latin"] });
 export function Navbar() {
   return (
     <>
-      <header className="fixed top-0 border-2 bg-white">
+      <header className="fixed top-0 border-2 bg-white z-50">
         <div className="md:flex w-screen h-14 p-6 items-center justify-between">
           <div className="space-x-4 md:flex">
             <Link href="/">
@@ -106,10 +106,12 @@ export function Navbar() {
               <CalendarDaysIcon className="pr-1" />
               <p className="text-sm font-medium">我的行程</p>
             </Link>
+            <Link href="/login">
             <Avatar>
               <AvatarImage src="https://github.com/shadcn.png" />
               <AvatarFallback />
             </Avatar>
+            </Link>
           </div>
         </div>
       </header>

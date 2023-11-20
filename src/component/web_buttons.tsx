@@ -29,7 +29,7 @@ const buttons = [
     title: "新增物件",
     icon: AiOutlinePlus,
     color: "#65a30d",
-    link: "/choose",
+    link: "/addchoose",
   },
   {
     title: "我的市調",

@@ -8,7 +8,7 @@ import taiwan from "/public/taiwan.png";
 export default function Choose() {
   return (
     <>
-      <div className="h-screen flex-col flex-1">
+      <div className="h-screen w-screen flex-col flex-1">
         <div className="h-16">
           <Navbar />
         </div>
@@ -45,9 +45,9 @@ export default function Choose() {
             </Button>
           </div>
         </div>
-        <div className="flex-col flex-1 mt-4">
+        {/* <div className="flex-col flex-1 mt-4">
           <Image src={Footer} alt="footer" width={1450} height={5} />
-        </div>
+        </div> */}
       </div>
     </>
   );
