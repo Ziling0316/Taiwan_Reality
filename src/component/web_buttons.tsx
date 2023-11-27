@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ContextMenu, ContextMenuTrigger } from "@/components/ui/context-menu";
 import { cn } from "@/lib/utils";
-import { BsFillHouseFill } from "react-icons/Bs";
+import { BsFillHouseFill } from "react-icons/bs";
 import { AiOutlinePlus } from "react-icons/ai";
 import { FaClipboardList } from "react-icons/fa";
 import { TbScanEye } from "react-icons/tb";
