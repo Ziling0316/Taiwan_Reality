@@ -7,10 +7,10 @@ import {
   } from "@/components/ui/select";
   import { ScrollArea } from "@/components/ui/scroll-area";
   import { usage } from "../data/housedata";
-  export function Select_usage() {
+  export function Select_usage({ usageTypeId, onUsageTypeIdChange }: { usageTypeId: string, onUsageTypeIdChange: (e: string) => void }) {
     return (
       <>
-        <Select>
+        <Select value={usageTypeId} onValueChange={(e) => onUsageTypeIdChange(e)}>
           <SelectTrigger className="w-[150px]">
             <SelectValue placeholder="請選擇用途" />
   

@@ -8,10 +8,10 @@ import {
 import { position } from "../data/housedata"
 
 
-export function Select_position(){
+export function Select_position({ facingId, onFacingIdChange }: { facingId: string, onFacingIdChange: (e: string) => void }){
     return(
         <>
-        <Select>
+        <Select value={facingId} onValueChange={(e) => onFacingIdChange(e)}>
             <SelectTrigger className="w-[150px]">
               <SelectValue placeholder="請選擇方位" />
               <SelectContent>

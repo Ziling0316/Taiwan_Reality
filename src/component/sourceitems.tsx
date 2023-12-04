@@ -7,10 +7,10 @@ import {
 } from "@/components/ui/select";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { source } from "../data/housedata";
-export function Select_source() {
+export function Select_source({ souceTypeId, onSouceTypeIdChange }: { souceTypeId: string, onSouceTypeIdChange: (e: string) => void }) {
   return (
     <>
-      <Select>
+      <Select value={souceTypeId} onValueChange={(e) => onSouceTypeIdChange(e)}>
         <SelectTrigger className="w-[150px]">
           <SelectValue placeholder="請選擇來源" />
 

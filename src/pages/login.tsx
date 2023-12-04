@@ -18,10 +18,21 @@ import { useRouter } from "next/router";
 import * as React from "react";
 import { AiFillFacebook } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
+
+let token: any;
+export { token };
+
 export default function Login() {
   const [visible, setVisible] = React.useState<boolean>(false);
   const [member, setMember] = React.useState<string>("");
   const router = useRouter();
+
+  const [loginTb, setLoginTb] = React.useState(
+    {
+        'account'  : "",       
+        'password' : "",              
+    }
+  );
 
   const HandleClick = (event: any) => {
     event.preventDefault();
@@ -32,6 +43,39 @@ export default function Login() {
     }
     console.log(document.getElementById("general member"));
   };
+  //login api
+  const handleLogin = async (e: any) => {
+    e.preventDefault();
+    try {
+        // console.log(JSON.stringify(loginTb));
+        const response = await fetch("http://localhost:5000/api/users/login", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(loginTb),
+        });
+        
+        if (response.status === 200) {
+          console.log('login successfully.');
+        } else if (response.status === 801) {
+          console.log('密碼錯誤')
+        } else if (response.status === 802) {
+          console.log('無此帳號')
+        } else{
+          console.log('fail');
+        }
+        const responseData = await response.json(); 
+        console.log(responseData.access_token);
+        token = responseData.access_token;
+        
+        
+    } catch (error) {
+        console.log('error');
+    }
+}
+
+
 
   return (
     <div className="flex w-screen h-screen justify-center items-center">
@@ -45,7 +89,7 @@ export default function Login() {
             <div className="grid items-center gap-4">
               <div className="flex flex-col space-y-1.5">
                 <Label>手機號碼</Label>
-                <Input id="phone" placeholder="請輸入手機號碼" />
+                <Input id="phone" placeholder="請輸入手機號碼" value={loginTb.account} onChange={(e) =>  setLoginTb({ ...loginTb, 'account': e.target.value })}/>
               </div>
               <div className="flex-col space-y-1.5">
                 <Label>密碼</Label>
@@ -54,9 +98,11 @@ export default function Login() {
                   type={visible ? "text" : "password"}
                   id="password"
                   placeholder="請輸入密碼"
+                  value={loginTb.password} 
+                  onChange={(e) =>  setLoginTb({ ...loginTb, 'password': e.target.value })}
                 />
                 <FontAwesomeIcon
-                  icon={visible ? faEyeSlash : faEye}
+                  icon={visible ? faEye : faEyeSlash}
                   onClick={() => setVisible(!visible)}
                   className="relative left-[320px] -top-[35px]"
                 />
@@ -110,7 +156,7 @@ export default function Login() {
           </form>
         </CardContent>
         <CardFooter className="flex justify-end">
-          <Button variant="outline" className="w-[100px]">
+          <Button variant="outline" className="w-[100px]" onClick={handleLogin}>
             登入
           </Button>
         </CardFooter>

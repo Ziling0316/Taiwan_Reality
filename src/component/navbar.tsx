@@ -32,8 +32,8 @@ export function Navbar() {
   return (
     <>
       <header className="fixed top-0 border-2 bg-white z-50">
-        <div className="md:flex w-screen h-14 p-6 items-center justify-between">
-          <div className="space-x-4 md:flex">
+        <div className="md:flex w-screen h-14 p-6 items-center justify-between media-1">
+          <div className="space-x-4 md:flex media-2">
             <Link href="/">
               <div className="space-x-1 flex items-center">
                 <GiFamilyHouse size={35} />
@@ -46,18 +46,18 @@ export function Navbar() {
               </div>
             </Link>
             <div className="md:flex space-x-1">
-              <Badge variant="outline" className="text-sm">
+              <Badge variant="outline" className="text-sm media-2-1">
                 <CrownIcon className="w-5 pr-1 " />
                 一般會員 Level 0
               </Badge>
-              <Badge variant="outline" className="text-sm pl-[20px] pr-[30px]">
+              <Badge variant="outline" className="text-sm pl-[20px] pr-[30px] media-2-1">
                 <PiggyBankIcon className="w-6 pr-1" />
                 會員積分 0
               </Badge>
             </div>
           </div>
-          <div className="md:flex items-center">
-            <NavigationMenu className="">
+          <div className="md:flex items-center media-3-1">
+            <NavigationMenu className="media-3">
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>
@@ -102,15 +102,15 @@ export function Navbar() {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-            <Link href="/" className="md:flex items-center mr-3 pl-2">
+            <Link href="/" className="md:flex items-center mr-3 pl-2 media-4">
               <CalendarDaysIcon className="pr-1" />
               <p className="text-sm font-medium">我的行程</p>
             </Link>
-            <Link href="/login">
-            <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback />
-            </Avatar>
+            <Link href="/login" className="media-5">
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback />
+              </Avatar>
             </Link>
           </div>
         </div>

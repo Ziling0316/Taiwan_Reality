@@ -5,7 +5,7 @@ import { Advertiseswork } from "./advertises_work";
 export function Advertise() {
   return (
     <>
-      <div className="pt-[78px] w-screen p-2">
+      <div className="pt-[78px] w-screen p-2 ads-1">
         <ScrollArea>
           <div className="flex space-x-4 pb-4">
             {Advertises.map((advertise) => (
