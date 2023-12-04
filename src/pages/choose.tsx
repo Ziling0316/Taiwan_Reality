@@ -12,7 +12,7 @@ export default function Choose() {
         <div className="h-16">
           <Navbar />
         </div>
-        <div className="flex-col flex-1">
+        <div className="flex-col flex-1 choose-1">
           <div className="mt-28 w-screen flex justify-center">
             <Image src={taiwan} alt="taiwan" width={100} height={10} />
           </div>
@@ -45,7 +45,7 @@ export default function Choose() {
             </Button>
           </div>
         </div>
-        {/* <div className="flex-col flex-1 mt-4">
+        {/* <div className="flex-col flex-1 choose-2">
           <Image src={Footer} alt="footer" width={1450} height={5} />
         </div> */}
       </div>

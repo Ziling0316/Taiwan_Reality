@@ -1,0 +1,101 @@
+@media (orientation: portrait), screen and (max-width: 540px){
+    /* navbar header */
+    .media-1{
+        padding: 1rem;
+        height: 125px;
+    }
+    .media-2{
+        display: inline-flex;
+        height: 50px;
+    }
+    .media-2-1{
+        height: 35px;
+    }
+    .media-3{
+        display: inline-flex;
+        width: 100%;
+        height: 40px;
+        margin-left: 0px;
+    }
+    .media-4{
+        display: inline-flex;
+        width: 80px;
+        padding-left: 0;
+    }
+    .media-5{
+        display: inline-flex;
+        position: absolute;
+        right: 7.5%;
+    }
+    .media-5 span{
+        width: 50px;
+        height: 50px;
+    }
+    /* ads */
+    .ads-1{
+        padding-top: 150px;
+    }
+    /* choose */
+    .choose-1{
+        width: 100%;
+        height: 63%;
+    }
+    .choose-icon{
+        width: 100%;
+        margin-top: 6rem;
+    }
+    .choose-content{
+        width: 95%;
+    }
+    .choose-2{
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+@media screen and (min-width: 768px) 
+and (max-width: 960px){
+    .media-1{
+        display: inline-flex;
+        padding: 1rem;
+        height: 65px;
+    }
+    .media-2{
+        display: inline-flex;
+    }
+    .media-2 a h1{
+        font-size: 1.25rem;
+    }
+    .media-3-1{
+        display: inline-flex;
+        margin-right: 10px;
+    }
+    .media-3 h2{
+        display: none;
+    }
+    .media-4 p{
+        display: none;
+    }
+}
+/*
+@media screen and (min-width: 900px) 
+and (max-width: 960px){
+    .media-1{
+        padding: 1rem;
+        height: 65px;
+    }
+    .media-2{
+        display: inline-flex;
+    }
+    .media-3{
+        display: inline-flex;
+        height: 40px;
+        margin-left: 0px;
+    }
+    .media-4{
+    }
+    .media-5{
+    }
+    .ads-1{
+    }
+} */

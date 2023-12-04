@@ -8,10 +8,10 @@ import {
 import { partition } from "../data/housedata"
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-export function Select_partition(){
+export function Select_partition({ zoneId, onZoneIdChange }: { zoneId: string, onZoneIdChange: (e: string) => void }){
     return(
         <>
-        <Select>
+        <Select value={zoneId} onValueChange={(e) => onZoneIdChange(e)}>
             <SelectTrigger className="w-[150px]">
               <SelectValue placeholder="請選擇分區" />
               <SelectContent>

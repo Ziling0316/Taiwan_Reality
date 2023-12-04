@@ -5,13 +5,15 @@ import {
     SelectValue,
     SelectItem,
 } from "@/components/ui/select";
+import React from "react";
 import { property } from "../data/housedata"
 
 
-export function Select_property(){
+
+export function Select_property({ attitudeId, onAttitudeIdChange }: { attitudeId: string, onAttitudeIdChange: (e: string) => void }){
     return(
         <>
-        <Select>
+        <Select value={attitudeId} onValueChange={(e) => onAttitudeIdChange(e)}>
             <SelectTrigger className="w-[150px]">
               <SelectValue placeholder="請選擇性質" />
               <SelectContent>
@@ -22,6 +24,7 @@ export function Select_property(){
             </SelectTrigger>
           </Select>
         </>
-
     );
+     
 }
+
